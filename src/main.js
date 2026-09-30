@@ -4,99 +4,115 @@ const image = (filename) => `${import.meta.env.BASE_URL}images/${filename}`
 
 document.querySelector('#app').innerHTML = `
   <header class="site-header">
-    <a class="wordmark" href="#top" aria-label="Morgan Lee, home">
-      <span class="wordmark-mark">ML</span>
-      <span class="wordmark-name">Morgan Lee<small>Independent designer</small></span>
-    </a>
+    <div class="header-brand">
+      <a class="wordmark" href="#top" aria-label="Vindhriko C, home">
+        <span class="wordmark-mark">VC</span>
+        <span class="wordmark-name">Vindhriko C<small>Bachelor of Computer Science</small></span>
+      </a>
+      <nav class="header-contacts" aria-label="Contact links">
+        <a href="mailto:busyVin238@gmail.com">busyVin238@gmail.com</a>
+        <a href="https://www.linkedin.com/in/vindhriko-cain-245386390/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/VindhrikoC" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </nav>
+    </div>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation">
       <span></span><span></span>
     </button>
     <nav class="site-nav" id="site-nav" aria-label="Main navigation">
       <a href="#work">Work <span>03</span></a>
       <a href="#about">About</a>
-      <a class="nav-contact" href="#contact">Let's talk <span aria-hidden="true">↗</span></a>
     </nav>
   </header>
 
   <main id="top">
-    <section class="hero page-gutter" aria-labelledby="hero-title">
-      <div class="hero-copy">
-        <p class="eyebrow"><span class="status-dot"></span> Available for select projects <span class="eyebrow-year">/ <span data-year></span></span></p>
-        <h1 id="hero-title">Good ideas<br />deserve <em>good</em><br />design.</h1>
-        <div class="hero-bottom">
-          <p>I make thoughtful digital experiences and identities for people building a more interesting world.</p>
-          <a class="circle-link" href="#work" aria-label="Explore selected work"><span aria-hidden="true">↓</span></a>
-        </div>
-      </div>
-      <div class="hero-art" aria-label="A sunlit creative studio">
-        <img src="${image('studio.jpg')}" alt="Sunlit creative studio with a shared work table" />
-        <div class="art-stamp"><span>MAKE<br />ROOM<br />FOR<br /><i>BETTER</i></span><b aria-hidden="true">✳</b></div>
-        <span class="art-caption">A little space to think / 01</span>
-      </div>
-      <div class="hero-index" aria-hidden="true">PORTFOLIO<br />2025 — <span data-year></span></div>
-    </section>
-
     <section class="work-section page-gutter" id="work" aria-labelledby="work-title">
       <div class="section-heading">
         <div>
-          <p class="eyebrow">A few things I've made</p>
-          <h2 id="work-title">Selected work<span class="heading-period">.</span></h2>
+          <p class="eyebrow">A few things I've made or have helped work on</p>
+          <h2 id="work-title">Personal/School Projects<span class="heading-period">.</span></h2>
         </div>
-        <p class="section-note">A mix of identity, digital<br />and things in between.</p>
       </div>
       <div class="filters" role="group" aria-label="Filter projects">
         <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">All <span>03</span></button>
-        <button class="filter-button" type="button" data-filter="identity" aria-pressed="false">Identity</button>
-        <button class="filter-button" type="button" data-filter="digital" aria-pressed="false">Digital</button>
-        <button class="filter-button" type="button" data-filter="objects" aria-pressed="false">Objects</button>
+        <button class="filter-button" type="button" data-filter="doggame" aria-pressed="false">Huskies In Space</button>
+        <button class="filter-button" type="button" data-filter="ml" aria-pressed="false">Machine learning prediction model</button>
+        <button class="filter-button" type="button" data-filter="foodapp" aria-pressed="false">Food App</button>
+        <!-- <button class="filter-button" type="button" data-filter="example" aria-pressed="false">Example</button> -->
       </div>
       <div class="project-grid">
-        <article class="project-card" data-category="identity">
-          <a class="project-image image-ritual" href="#contact" aria-label="Ask about the Ritual project">
-            <img src="${image('ritual.jpg')}" alt="Minimal skincare bottle with a warm, sculptural silhouette" loading="lazy" />
-            <span class="image-label">01 / IDENTITY</span><span class="image-arrow" aria-hidden="true">↗</span>
+        <article class="project-card" data-category="doggame" data-description="The lead programmer working with a team of 7 people in a game development club to create a top down puzzle game inspired from the video game series portal using Godot.">
+          <a class="project-image image-HuskiesInSpace" href="#project-detail" aria-label="View Huskies In Space project details">
+            <img src="${image('HuskiesInSpace.png')}" alt="Huskies in space level 1 picture" loading="lazy" />
+            <span class="image-label">01 / HUSKIES IN SPACE</span><span class="image-arrow" aria-hidden="true">↗</span>
           </a>
-          <div class="project-meta"><div><h3>Ritual</h3><p>Care for the everyday</p></div><span>2025</span></div>
+          <div class="project-meta"><div><h3>Huskies In Space</h3><p>UWT gamedev project</p></div><span>(Oct 24 - Jun 25)</span></div>
         </article>
-        <article class="project-card" data-category="digital">
-          <a class="project-image image-common" href="#contact" aria-label="Ask about the Common Ground project">
-            <img src="${image('common-ground.jpg')}" alt="Bold modern architecture against a clear afternoon sky" loading="lazy" />
-            <span class="image-label">02 / DIGITAL</span><span class="image-arrow" aria-hidden="true">↗</span>
+        <article class="project-card" data-category="ml" data-description="Worked in a group to create a prediction model using machine learning techniques, scikit-learn, linear regression, image preprocessing, and naive bayes.">
+          <a class="project-image image-MachineLearning" href="#project-detail" aria-label="View Machine Learning project details">
+            <img src="${image('machinelearning.png')}" alt="Machine learning project" loading="lazy" />
+            <span class="image-label">02 / MACHINE LEARNING PREDITION MODEL</span><span class="image-arrow" aria-hidden="true">↗</span>
           </a>
-          <div class="project-meta"><div><h3>Common Ground</h3><p>A place for good neighbors</p></div><span>2024</span></div>
+          <div class="project-meta"><div><h3>Machine learning prediction model</h3><p>UWT Machine learning project</p></div><span>(April - June 2025)</span></div>
         </article>
-        <article class="project-card" data-category="objects">
-          <a class="project-image image-form" href="#contact" aria-label="Ask about the Form Study project">
-            <img src="${image('form-study.jpg')}" alt="Sculptural chair and quiet objects in a considered interior" loading="lazy" />
-            <span class="image-label">03 / OBJECTS</span><span class="image-arrow" aria-hidden="true">↗</span>
+        <article class="project-card" data-category="foodapp" data-description="Personal project where users can upload macros they want to hit and a personalized meal plan is made based on user input using Copilot, Fast API, SQL, and Docker">
+          <a class="project-image image-foodapp" href="#project-detail" aria-label="View Food App project details">
+            <img src="${image('foodapp.png')}" alt="picture of the food app im currently working on" loading="lazy" />
+            <span class="image-label">03 / FOOD APP</span><span class="image-arrow" aria-hidden="true">↗</span>
           </a>
-          <div class="project-meta"><div><h3>Form Study</h3><p>Objects with a softer edge</p></div><span>2024</span></div>
+          <div class="project-meta"><div><h3>Food App</h3><p>Most recent personal project im working on</p></div><span>(Aug 26 - present)</span></div>
         </article>
+        <!--
+        <article class="project-card" data-category="example">
+          <a class="project-image" href="#contact" aria-label="Ask about the Example project">
+            <img src="${image('example-project.jpg')}" alt="Describe the project image" loading="lazy" />
+            <span class="image-label">04 / EXAMPLE</span>
+            <span class="image-arrow" aria-hidden="true">↗</span>
+          </a>
+          <div class="project-meta">
+            <div>
+              <h3>Example project</h3>
+              <p>A short description</p>
+            </div>
+            <span>2026</span>
+          </div>
+        </article>
+        -->
       </div>
-      <p class="work-footnote"><span>More work is always in progress.</span><a href="#contact">Have something in mind? <span aria-hidden="true">↗</span></a></p>
+      <div class="project-detail" id="project-detail" aria-live="polite" hidden>
+        <div class="project-detail-copy">
+          <p class="eyebrow" data-detail-category></p>
+          <h3 data-detail-title></h3>
+          <p class="project-detail-year" data-detail-year></p>
+          <p class="project-detail-description" data-detail-description></p>
+        </div>
+        <img class="project-detail-image" data-detail-image alt="" />
+      </div>
+      <p class="work-footnote"><span>More work is always in progress.</span></p>
     </section>
 
     <section class="about-section" id="about" aria-labelledby="about-title">
       <div class="about-inner page-gutter">
         <div class="about-photo">
-          <img src="${image('portrait.jpg')}" alt="Portrait of Morgan Lee" loading="lazy" />
-          <span class="photo-note">A face to the name / 2025</span>
+          <img src="${image('uwnecoarcs.jpg')}" alt="Portrait of Vindhriko C" loading="lazy" />
         </div>
         <div class="about-copy">
-          <p class="eyebrow">A bit about me</p>
-          <h2 id="about-title">Curious by nature.<br /><em>Considered</em> by design.</h2>
-          <p class="about-intro">I'm Morgan, an independent designer partnering with good people to make useful things feel a little more human.</p>
-          <p class="about-detail">From first sketches to the final, tiny details, I bring curiosity and care to the whole process. I like clear ideas, kind collaboration, and work that earns its place in the world.</p>
-          <div class="about-tags"><span>Art direction</span><span>Visual identity</span><span>Digital experiences</span><span>Creative partnership</span></div>
-          <a class="text-link" href="#contact">More about working together <span aria-hidden="true">↗</span></a>
+          <h2 id="about-title">Bachelor of Computer Science</h2>
+          <p class="about-description">Hello, my Name is Vindhriko, or Vin for short, I recently graduated earlier this year from UWT and I'm really excited to learn more about breaking into the tech field.
+          Computer Science has always been a love of mine and ever since graduating I've only grown more fond of it, I love to learn, problem solve, and tackle the hardest of challenges, as thats what helps me learn
+          the most. If I'm not working on a project, working on leetcode or codewars problems, or helping my family with whatever they need I'm working on my fitness or playing video games, and in every aspect I
+          strive to learn more and more each day in the hopes of being better than I was a week ago, whether it be a new strategy for solving leetcodes, or a new technique to improve my aim. I'm addicted to learning and love every chance I can get to take a challenge face on.</p>
         </div>
       </div>
     </section>
 
     <footer class="site-footer page-gutter" id="contact">
-      <div class="footer-top"><p class="eyebrow">Have a good one in mind?</p><span class="footer-spark" aria-hidden="true">✳</span></div>
-      <a class="footer-title" href="mailto:hello@morganlee.design">Let's make<br /><em>it matter.</em><span aria-hidden="true">↗</span></a>
-      <div class="footer-bottom"><a class="footer-email" href="mailto:hello@morganlee.design">hello@morganlee.design</a><span>Independent designer / Working everywhere</span><span>© <span data-year></span> Morgan Lee</span></div>
+      <span class="footer-label">Contact</span>
+      <nav class="footer-contacts" aria-label="Contact links">
+        <a href="mailto:busyVin238@gmail.com">busyVin238@gmail.com</a>
+        <a href="https://www.linkedin.com/in/vindhriko-cain-245386390/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/VindhrikoC" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </nav>
+      <span class="footer-legal">© <span data-year></span> Vindhriko C</span>
     </footer>
   </main>
 `
@@ -108,20 +124,60 @@ document.querySelectorAll('[data-year]').forEach((element) => {
 
 const filterButtons = document.querySelectorAll('.filter-button')
 const projectCards = document.querySelectorAll('.project-card')
+const projectGrid = document.querySelector('.project-grid')
+const projectDetail = document.querySelector('#project-detail')
+
+const showProjectDetails = (card) => {
+  filterButtons.forEach((button) => {
+    const isSelected = button.dataset.filter === card.dataset.category
+    button.classList.toggle('is-active', isSelected)
+    button.setAttribute('aria-pressed', String(isSelected))
+  })
+
+  projectCards.forEach((projectCard) => {
+    projectCard.hidden = projectCard !== card
+  })
+
+  projectGrid.hidden = true
+  projectDetail.hidden = false
+  projectDetail.querySelector('[data-detail-category]').textContent = card.dataset.category
+  projectDetail.querySelector('[data-detail-title]').textContent = card.querySelector('.project-meta h3').textContent
+  projectDetail.querySelector('[data-detail-year]').textContent = card.querySelector('.project-meta > span').textContent
+  projectDetail.querySelector('[data-detail-description]').textContent = card.dataset.description
+
+  const projectImage = card.querySelector('.project-image img')
+  const detailImage = projectDetail.querySelector('[data-detail-image]')
+  detailImage.src = projectImage.src
+  detailImage.alt = projectImage.alt
+}
 
 filterButtons.forEach((button) => {
   button.addEventListener('click', () => {
     const selectedFilter = button.dataset.filter
 
-    filterButtons.forEach((filterButton) => {
-      const isSelected = filterButton === button
-      filterButton.classList.toggle('is-active', isSelected)
-      filterButton.setAttribute('aria-pressed', String(isSelected))
-    })
+    if (selectedFilter === 'all') {
+      filterButtons.forEach((filterButton) => {
+        const isSelected = filterButton === button
+        filterButton.classList.toggle('is-active', isSelected)
+        filterButton.setAttribute('aria-pressed', String(isSelected))
+      })
+      projectCards.forEach((card) => {
+        card.hidden = false
+      })
+      projectGrid.hidden = false
+      projectDetail.hidden = true
+      return
+    }
 
-    projectCards.forEach((card) => {
-      card.hidden = selectedFilter !== 'all' && card.dataset.category !== selectedFilter
-    })
+    const selectedCard = [...projectCards].find((card) => card.dataset.category === selectedFilter)
+    if (selectedCard) showProjectDetails(selectedCard)
+  })
+})
+
+projectCards.forEach((card) => {
+  card.querySelector('.project-image').addEventListener('click', (event) => {
+    event.preventDefault()
+    showProjectDetails(card)
   })
 })
 
